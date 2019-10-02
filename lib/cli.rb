@@ -6,12 +6,20 @@ class CLI
   def run 
     puts "Welcome to NYC top attractions!"
     puts "Would you like to see the most popular attractions?"
-    puts "Please select a top attraction"
-    puts "Sorry, try again"
-    puts "Here are the details for #{}"
-    puts "Highlights: #{}"
-    puts "Location: #{}"
     Scraper.scrape_citypass 
-   end 
-  
-end  
+    menu 
+  end 
+
+   
+   def menu 
+     puts "Please select a top attraction."
+     input = gets.chomp 
+     attraction = attraction.all[input.to_i-1]
+     
+     if !attraction 
+       puts "Sorry, attraction not found."
+       menu 
+     else 
+     end 
+    end 
+end 
