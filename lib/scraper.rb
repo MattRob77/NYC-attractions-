@@ -8,7 +8,10 @@ class Scraper
   
 
   def self.scrape_citypass
-   attraction = [] 
+    citypass_URL = "https://www.citypass.com/new-york/things-to-do-new-york"
+    
+    attraction = []
+ 
  
     
     html = open("https://www.citypass.com/new-york/things-to-do-new-york")
@@ -21,5 +24,12 @@ class Scraper
       puts "#{i} #{attraction}"
       end 
     end 
+    
+    def self.scrape_individual_attraction(attraction)
+      html = open(citypass_URL+attraction.url)
+      doc = Nokogiri::HTML(html)
+    end 
+    
+   
 
 end 
