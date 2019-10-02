@@ -2,6 +2,7 @@
 require "open-uri" 
 require "nokogiri"
 
+
 class CLI 
  
   def run 
@@ -15,7 +16,7 @@ class CLI
    def menu 
      puts "Please select a top attraction."
      input = gets.chomp 
-     attraction = attraction.all[input.to_i-1]
+     attraction = Attraction.all[input.to_i-1]
     
      
      
