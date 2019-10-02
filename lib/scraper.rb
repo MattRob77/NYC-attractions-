@@ -1,14 +1,12 @@
 require "open-uri"
 require "nokogiri"
-require "pry" 
 
   
 class Scraper 
    citypass_URL = "https://www.citypass.com/new-york/things-to-do-new-york"
  
     
-
-  def self.scrape_citypass
+def self.scrape_citypass
     
     attraction = []
  
@@ -31,4 +29,4 @@ class Scraper
     
    
 
-end    
+end  
