@@ -4,12 +4,12 @@ require "nokogiri"
 
 class Attraction 
   
-  attr_accessor :name, :url 
+  attr_accessor :headline, :url 
    @@all = []
  
   
-  def initialize(name, url)
-    @name = name 
+  def initialize(headline, url)
+    @headline = headline 
     @url = url 
     @@all << self 
   end 
