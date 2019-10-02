@@ -1,20 +1,17 @@
-
 require "open-uri"
 require "nokogiri"
+require "pry" 
 
-
-
-class Scraper 
   
+class Scraper 
+   citypass_URL = "https://www.citypass.com/new-york/things-to-do-new-york"
+ 
+    
 
   def self.scrape_citypass
     
     attraction = []
  
-    
-    citypass_URL = "https://www.citypass.com/new-york/things-to-do-new-york"
- 
-    
     html = open("https://www.citypass.com/new-york/things-to-do-new-york")
     doc = Nokogiri::HTML(html)
     doc.css("div.sidebar-attraction-nav p").each do |paragraph|  
@@ -29,8 +26,9 @@ class Scraper
     def self.scrape_individual_attraction(attraction)
       html = open(citypass_URL+attraction.url)
       doc = Nokogiri::HTML(html)
+      binding.pry
     end 
     
    
 
-end  
+end    
