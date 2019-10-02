@@ -15,7 +15,10 @@ class CLI
     doc.css("div.sidebar-attraction-nav p").each do |paragraph|  
       attraction << paragraph.css("a").text
      end 
-    puts attraction 
+    
+    attraction.each.with_index(1) do |attraction, i|
+      puts "#{i} #{attraction}"
+    end 
   end 
+  
 end 
-
