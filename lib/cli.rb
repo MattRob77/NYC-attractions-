@@ -1,5 +1,5 @@
 #User controller-input 
-require "pry"
+
 
 
 class CLI 
@@ -14,13 +14,12 @@ class CLI
    
    def menu 
      puts "Please select a top attraction."
-     input = gets.chomp 
+     input = gets.chomp #grabs input from the user (y,n)
      attraction = Attraction.all[input.to_i-1]
     
      
-     
      if !attraction
-       puts "Sorry, attraction not found."
+       puts "Attraction not found. Please select a different attraction."
        menu 
      else 
        Scraper.scrape_individual_attraction(attraction)
