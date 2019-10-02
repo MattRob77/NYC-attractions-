@@ -1,6 +1,4 @@
 #User controller-input 
-require "open-uri" 
-require "nokogiri"
 
 
 class CLI 
