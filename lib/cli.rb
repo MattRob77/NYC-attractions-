@@ -16,8 +16,8 @@ class CLI
       attraction << paragraph.css("a").text
      end 
     
-    attraction.each.with_index(1) do |attraction, i|
-      puts "#{i} #{attraction}"
+    attraction.each.with_index(1) do |attraction, i| #These two lines of code sets the index, making attractions numbered 
+      puts "#{i} #{attraction}"  #numbered list 
     end 
   end 
   
