@@ -23,6 +23,10 @@ class CLI
        menu 
      else 
        Scraper.scrape_individual_attraction(attraction)
+       puts "Here are the details for #{attraction.paragraph}"
+       puts "highlights: #{attraction.highlights}"
+       puts "location: #{attraction.location}"
+       puts "contact: #{attraction.contact}"
      end 
     end 
 end 
