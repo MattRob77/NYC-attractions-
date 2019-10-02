@@ -8,10 +8,11 @@ class Scraper
   
 
   def self.scrape_citypass
-    citypass_URL = "https://www.citypass.com/new-york/things-to-do-new-york"
     
     attraction = []
  
+    
+    citypass_URL = "https://www.citypass.com/new-york/things-to-do-new-york"
  
     
     html = open("https://www.citypass.com/new-york/things-to-do-new-york")
@@ -32,4 +33,4 @@ class Scraper
     
    
 
-end 
+end  
