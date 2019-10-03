@@ -1,3 +1,4 @@
+
 require "open-uri"
 require "nokogiri"
 require "pry" 
@@ -24,10 +25,9 @@ def self.scrape_citypass
     def self.scrape_individual_attraction(attraction)
       html = open(citypass_URL+attraction.url)
       doc = Nokogiri::HTML(html)
-      binding.pry
-      attraction.highlights = doc.css(".accordion-content js-accordion-content").text.split("\n")[1].strip 
-      attraction.location = doc.css("indent-block icon-location").text.split("\n")[1].strip 
-      attraction.contact = doc.css("indent-block icon-phone").text.split("\n")[1].strip 
+      attraction.highlights = doc.css(".accordion-content.js-accordion-content").text.split("\n")[1].strip 
+      attraction.location = doc.css(".indent-block.icon-location").text.split("\n")[1].strip 
+      attraction.contact = doc.css(".indent-block.icon-phone").text.split("\n")[1].strip 
     end 
      
-end 
+end  
