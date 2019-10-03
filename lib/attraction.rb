@@ -1,15 +1,15 @@
 require "open-uri"
 require "nokogiri"
-require "pry"
+
 
 
 class Attraction 
   
-  attr_accessor :headline, :url, :headline, :location, :contact
+  attr_accessor :headline, :url, :contact, :location, :highlights
    @@all = []
  
   
-  def initialize(headline, url)
+  def initialize(headline,url)
     @headline = headline
     @url = url 
     @@all << self 
