@@ -1,29 +1,29 @@
-require "open-uri"
+require "open-uri"  #data gems 
 require "nokogiri"
 
 
 
-class Scraper 
-   CITYPASS_URL = "https://www.citypass.com/new-york/" 
+class Scraper #defined class Scraper 
+   CITYPASS_URL = "https://www.citypass.com/new-york/" #passed in variable 
  
     
-def self.scrape_citypass
+def self.scrape_citypass #defined method 
     
-    attraction = []
+    attraction = [] #empty array 
  
-    html = open("https://www.citypass.com/new-york/things-to-do-new-york")
-    doc = Nokogiri::HTML(html)
-    doc.css("div.sidebar-attraction-nav p").each do |paragraph|  
-      attraction = paragraph.css("a").text
-      url = paragraph.css("a").attr("href").value
-       Attraction.new(attraction,url)
+    html = open("https://www.citypass.com/new-york/things-to-do-new-york") #main webpage scrapped from 
+    doc = Nokogiri::HTML(html) 
+    doc.css("div.sidebar-attraction-nav p").each do |paragraph|  #css that had the paragraph data 
+      attraction = paragraph.css("a").text #added the (a)nchor css selecter equal to attraction 
+      url = paragraph.css("a").attr("href").value 
+       Attraction.new(attraction,url) 
    
      end 
    
     
     end 
    
-    def self.scrape_individual_attraction(attraction)
+    def self.scrape_individual_attraction(attraction) #defined method for second scraper class to pull indivdual data 
      
       html = open(CITYPASS_URL+attraction.url)
       doc = Nokogiri::HTML(html)
@@ -34,4 +34,4 @@ def self.scrape_citypass
        
     end 
      
-end  
+end
