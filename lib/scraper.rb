@@ -27,7 +27,7 @@ def self.scrape_citypass #defined method
      
       html = open(CITYPASS_URL+attraction.url)
       doc = Nokogiri::HTML(html)
-      attraction.highlights = doc.css(".accordion-content.js-accordion-content").text
+      attraction.highlights = doc.css(".accordion-content.js-accordion-content")[0].text
             attraction.location = doc.css(".indent-block.icon-location").text
       attraction.contact = doc.css(".indent-block.icon-phone").text
       
